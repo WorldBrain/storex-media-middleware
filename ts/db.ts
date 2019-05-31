@@ -1,7 +1,6 @@
 const toBuffer = require('typedarray-to-buffer')
 const Dauria = require('dauria')
 import { StorageModule, StorageModuleConfig, StorageModuleConstructorArgs } from "@worldbrain/storex-pattern-modules";
-import { STORAGE_VERSIONS } from "../../versions";
 import { UnsavedMediaObject, MediaObjectInfo, MediaStorage } from './types';
 
 export class DatabaseMediaStorage extends StorageModule implements MediaStorage {
@@ -13,7 +12,7 @@ export class DatabaseMediaStorage extends StorageModule implements MediaStorage 
         return {
             collections: {
                 mediaObject: {
-                    version: STORAGE_VERSIONS[0].date,
+                    version: new Date('2019-05-31'),
                     fields: {
                         mimetype: { type: 'string' },
                         data: { type: 'blob' },

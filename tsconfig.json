@@ -1,11 +1,12 @@
 {
-    "version": "2.5",
+    "version": "3.4",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "noImplicitAny": true,
-        "strictNullChecks": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "removeComments": true,
         "downlevelIteration": true,
         "lib": [
