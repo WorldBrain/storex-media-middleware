@@ -55,7 +55,11 @@ export class MediaStorageMiddleware implements StorageMiddleware {
         const mediaObjects : {[fieldName : string] : { reference : string }} = {}
         await Promise.all(options.collectionInfo.mediaFields.map(async fieldName => {
             const unsavedMediaObject = originalObject[fieldName] as UnsavedMediaObject
-            const mediaPk = await this.options.mediaStorage.storeMediaObject(unsavedMediaObject)
+            const mediaPk = await this.options.mediaStorage.storeMediaObject(unsavedMediaObject, {
+                collectionName: options.collectionName,
+                fieldName,
+                parent: originalObject
+            })
             const reference = `media:${mediaPk}`
             mediaObjects[fieldName] = { reference }
         }))
