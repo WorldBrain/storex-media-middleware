@@ -1,6 +1,6 @@
 {
   "name": "@worldbrain/storex-media-middleware",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "description": "Storex middleware for handling media storage",
   "main": "lib/index.js",
